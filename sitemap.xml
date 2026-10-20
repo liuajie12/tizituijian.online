@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 1. 首页 / 梯子推荐天梯榜 -->
+  <url>
+    <loc>https://tizituijian.online/</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/index.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 2. 机场评测总库 (15家主流机场实测) -->
+  <url>
+    <loc>https://tizituijian.online/reviews.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 3. 机场参数多维横向对比 -->
+  <url>
+    <loc>https://tizituijian.online/compare.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 4. 机场独家专属优惠券 -->
+  <url>
+    <loc>https://tizituijian.online/coupons.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 5. 客户端配置下载指南 -->
+  <url>
+    <loc>https://tizituijian.online/clients.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 6. 网络故障诊断自救手册 -->
+  <url>
+    <loc>https://tizituijian.online/network.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 7. AI 工具与 ChatGPT / Claude 专线指南 -->
+  <url>
+    <loc>https://tizituijian.online/ai-tools.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 8. 机场状态 24h 自动化健康大盘 -->
+  <url>
+    <loc>https://tizituijian.online/status.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 9. 机场跑路与风险预警黑名单 -->
+  <url>
+    <loc>https://tizituijian.online/risk.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- 10. 网站地图 (HTML Sitemap) -->
+  <url>
+    <loc>https://tizituijian.online/sitemap.html</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 11. 15 家主流机场独立专评页面 (动态渲染落地页) -->
+  <url>
+    <loc>https://tizituijian.online/review.html?id=speed</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=kexin</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=jilian</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=edge</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=kuaili</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=yuntu</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=guangnian</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=yunjie</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=dalao</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=durian</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=shenxing</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=wenlian</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=changyou</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=xunjie</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=geek</loc>
+    <lastmod>2026-10-20T23:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

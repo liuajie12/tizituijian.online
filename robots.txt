@@ -1,0 +1,75 @@
+# ========================================================
+# Robots.txt for tizituijian.online (梯子推荐指南)
+# https://tizituijian.online
+# ========================================================
+
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /*?*
+Allow: /review.html?id=*
+
+# ========================================================
+# Search Engine Crawlers
+# ========================================================
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+
+User-agent: Bingbot
+Allow: /
+Allow: /css/
+Allow: /js/
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ========================================================
+# AI Search & Generative Engine Optimization (GEO) Crawlers
+# Allow AI search engines to index structured data and content
+# ========================================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ========================================================
+# XML Sitemap Location
+# ========================================================
+Sitemap: https://tizituijian.online/sitemap.xml

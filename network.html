@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科学上网网络故障排查与自检向导 | 节点超时9999ms与断网修复</title>
+  <meta name="keywords" content="节点9999ms, 节点超时, 科学上网断网, 系统代理修复, 时间同步握手失败, TUN模式冲突, Clash报错">
+  <link rel="canonical" href="https://tizituijian.online/network.html">
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:site_name" content="梯子推荐指南 · TiziTuijian">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="科学上网网络故障排查与自检向导 | 节点超时9999ms与断网修复">
+  <meta property="og:description" content="科学上网网络问题全景诊断与自救手册。针对节点全红 9999ms、系统时间授时误差、订阅链接拉取失败、退出代理电脑断网提供专业修复方案。">
+  <meta property="og:url" content="https://tizituijian.online/network.html">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="科学上网网络故障自检与急救指南">
+  <meta name="twitter:description" content="节点测速超时、时间不同步、幽灵系统代理一键修复脚本。">
+
+  <!-- GEO & Regional SEO Meta Tags -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+  <meta http-equiv="content-language" content="zh-CN">
+
+  <!-- JSON-LD Structured Data (GEO & Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "科学上网网络故障排查与自检向导：节点超时9999ms与断网修复",
+    "description": "针对梯子节点测速超时、系统时间偏差导致TLS握手失败、幽灵系统代理残留导致断网提供底层原理解析与修复脚本",
+    "url": "https://tizituijian.online/network.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "梯子推荐指南",
+      "url": "https://tizituijian.online/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://tizituijian.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "网络问题排查",
+          "item": "https://tizituijian.online/network.html"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Banner -->
+  <div class="top-notice-bar">
+    <span class="notice-tag">🚨 故障急救</span>
+    <span>85% 的“节点全红9999ms”与“打不开外网”源自系统时间偏差与幽灵代理残留，跟随本向导 1 分钟即可定位并自愈。</span>
+    <a href="#quick-wizard" class="notice-link">开始自检 →</a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-area">
+        <div class="logo-badge">⚡</div>
+        <div class="brand-text">
+          <h1>梯子推荐指南</h1>
+          <span class="brand-sub">TiziTuijian · 全球网络评测矩阵</span>
+        </div>
+      </a>
+
+      <!-- 9 Main Nav Tabs -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link"><span class="nav-icon">🏆</span>梯子推荐</a>
+        <a href="reviews.html" class="nav-link"><span class="nav-icon">📝</span>机场评测</a>
+        <a href="compare.html" class="nav-link"><span class="nav-icon">⚖️</span>机场对比</a>
+        <a href="coupons.html" class="nav-link"><span class="nav-icon">🏷️</span>机场优惠码</a>
+        <a href="clients.html" class="nav-link"><span class="nav-icon">📱</span>客户端</a>
+        <a href="network.html" class="nav-link active"><span class="nav-icon">🛠️</span>网络问题</a>
+        <a href="ai-tools.html" class="nav-link"><span class="nav-icon">🤖</span>AI工具</a>
+        <a href="status.html" class="nav-link"><span class="nav-icon">📊</span>机场状态</a>
+        <a href="risk.html" class="nav-link"><span class="nav-icon">⚠️</span>风险预警</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" id="searchBtn" title="搜索全站 (Ctrl + K)">
+          <span>🔍</span>
+          <span>搜索...</span>
+          <span class="search-shortcut">⌘K</span>
+        </button>
+        <button class="icon-pill-btn" title="收藏夹" onclick="showToast('已加入浏览器收藏夹 (Ctrl+D)')">❤️</button>
+        <button class="icon-pill-btn" title="状态监控" onclick="location.href='status.html'">📶</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3-Column Layout Container -->
+  <main class="layout-wrapper">
+    <div class="three-column-grid">
+
+      <!-- LEFT COLUMN: Directory & Widgets -->
+      <aside class="sidebar-left">
+        
+        <!-- Views Stats Widget -->
+        <div class="views-widget">
+          <div class="views-widget-header">
+            <span class="views-label">Diagnostic Views</span>
+            <span class="views-dot" title="网络诊断引擎正常运行"></span>
+          </div>
+          <div class="views-count">9.2m</div>
+          <span class="views-change">98.4% 常见网络故障可自主修复</span>
+          <div class="widget-btn-group">
+            <a href="status.html" class="btn-teal">状态大盘</a>
+            <button class="btn-white" onclick="showToast('网络修复诊断包已就绪')">修复脚本</button>
+          </div>
+        </div>
+
+        <div class="clay-card">
+          <div class="sidebar-title">
+            <span>常见故障索引</span>
+            <span class="sidebar-badge-count">6 大专栏</span>
+          </div>
+
+          <div class="sidebar-search-box">
+            <span class="sidebar-search-icon">🔍</span>
+            <input type="text" placeholder="搜索故障现象/报错代码..." id="sidebarDirSearch">
+          </div>
+
+          <ul class="nav-directory-list">
+            <li class="nav-dir-item active">
+              <a href="#quick-wizard">
+                <span>🧭 30秒故障智能自检急救向导</span>
+                <span class="nav-dir-count">必看</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#issue-timeout">
+                <span>🚨 节点测速全红 9999ms / 超时</span>
+                <span class="nav-dir-count">高频</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#issue-time-sync">
+                <span>⏰ 系统时间不同步导致握手失败</span>
+                <span class="nav-dir-count">排查</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#issue-subscription">
+                <span>🔄 订阅链接无法更新与拉取失败</span>
+                <span class="nav-dir-count">订阅</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#issue-no-internet">
+                <span>🔌 退出代理后电脑彻底断网修复</span>
+                <span class="nav-dir-count">系统</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#issue-tun">
+                <span>🛡️ TUN 虚拟网卡安装与冲突解决</span>
+                <span class="nav-dir-count">进阶</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-divider"></div>
+
+          <div class="sidebar-title">
+            <span>诊断高频关键词</span>
+          </div>
+          <div class="quick-tags">
+            <span class="tag-item">9999ms超时</span>
+            <span class="tag-item">NTP授时同步</span>
+            <span class="tag-item">幽灵系统代理</span>
+            <span class="tag-item">Wintun驱动</span>
+            <span class="tag-item">FlushDNS</span>
+            <span class="tag-item">Fake-IP模式</span>
+          </div>
+        </div>
+
+        <!-- Left Ad / Emergency Tip -->
+        <div class="clay-card" style="margin-top: 18px; background: linear-gradient(145deg, #fdfbf7, #f7efe6);">
+          <div style="font-size: 0.82rem; font-weight: 700; color: #854d0e; margin-bottom: 6px;">💡 备用专线节点提示</div>
+          <p style="font-size: 0.78rem; color: #713f12; line-height: 1.5; margin-bottom: 10px;">
+            节点大面积红屏时，建议同时配置 1~2 个独立协议备用机场（如 <a href="review.html?id=speed" style="color:#0284c7;font-weight:700;">速捷网络</a> 或 <a href="review.html?id=durian" style="color:#0284c7;font-weight:700;">榴莲云</a>），避免单一中继机房突发维护引发断联。
+          </p>
+          <a href="compare.html" class="btn-teal btn-pill" style="font-size: 0.75rem; padding: 4px 10px; width: 100%; text-align: center; box-sizing: border-box;">查看低延迟专线对比 →</a>
+        </div>
+
+      </aside>
+
+      <!-- MIDDLE COLUMN: Main Content -->
+      <section class="main-content">
+        <article class="content-card">
+          
+          <div class="article-header">
+            <div class="breadcrumb-nav">
+              <a href="index.html">首页</a>
+              <span>/</span>
+              <a href="network.html">网络问题</a>
+              <span>/</span>
+              <span>故障自检排查急救</span>
+            </div>
+            <h1 class="article-title">科学上网网络故障自检指南：底层原理解析与科学自救手册</h1>
+            <p class="article-lead">
+              面对节点全红 9999ms、TLS 握手持续超时、订阅链接拉取报 403/503、或是关掉代理后整台电脑网页彻底瘫痪等问题，切勿盲目卸载重装系统。通过网络协议栈的逐层递进排查，绝大多数故障可在 1~3 分钟内彻底根治。
+            </p>
+            <div class="meta-row">
+              <span class="meta-chip verified">✓ 覆盖 Windows 10/11 · macOS · iOS · Android</span>
+              <span class="meta-chip">⚡ 针对 Clash Verge Rev · v2rayN · Sing-box · Surge 实测</span>
+              <span class="meta-chip">💡 建议快捷键 Ctrl+D 收藏备用</span>
+            </div>
+          </div>
+
+          <div class="content-body">
+            
+            <!-- SECTION 1: Quick Wizard -->
+            <section id="quick-wizard" class="airport-review-item" style="border-top: 3px solid var(--color-teal);">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🧭</span> 30秒故障智能自检急救向导
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px;">
+                网络故障的本质是<strong>通信握手链路在某一层被阻断</strong>。在排查前，切勿病急乱投医乱改配置。请遵循网络工程中经典的“四层诊断漏斗模型”逐步排查：
+              </p>
+
+              <div class="topology-flow" style="margin-bottom: 20px;">
+                <div class="topology-step">
+                  <span class="topology-step-num">L1</span>
+                  <span>底层网络连通性</span>
+                </div>
+                <span class="topology-arrow">→</span>
+                <div class="topology-step">
+                  <span class="topology-step-num">L2</span>
+                  <span>本地内核进程监听</span>
+                </div>
+                <span class="topology-arrow">→</span>
+                <div class="topology-step">
+                  <span class="topology-step-num">L3</span>
+                  <span>加密协议与TLS时间戳</span>
+                </div>
+                <span class="topology-arrow">→</span>
+                <div class="topology-step">
+                  <span class="topology-step-num">L4</span>
+                  <span>分流规则与DNS解析</span>
+                </div>
+              </div>
+
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10%;">排查层级</th>
+                      <th style="width: 32%;">检查项目与诊断依据</th>
+                      <th style="width: 38%;">快速自检与修复动作</th>
+                      <th style="width: 10%;">耗时</th>
+                      <th style="width: 10%;">自愈率</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>第 1 步</strong></td>
+                      <td>
+                        <strong>本地物理与宽带连通：</strong><br>
+                        <span style="font-size: 0.78rem; color: #64748b;">检查电脑直连国内网页（如百度/B站）是否正常打开。</span>
+                      </td>
+                      <td>
+                        若国内网站打不开，检查 Wi-Fi / 网线连接，或路由器拨号状态。
+                      </td>
+                      <td>5 秒</td>
+                      <td><span class="tag-badge gray">约 15%</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>第 2 步</strong></td>
+                      <td>
+                        <strong>系统本地时钟校准：</strong><br>
+                        <span style="font-size: 0.78rem; color: #64748b;">误差需严格控制在 30 秒以内，否则 TLS 与 VMess 拒绝握手。</span>
+                      </td>
+                      <td>
+                        进入系统设置强制点击“立即同步时间”，或使用 NTP 命令强制校准。
+                      </td>
+                      <td>10 秒</td>
+                      <td><span class="tag-badge green">约 45%</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>第 3 步</strong></td>
+                      <td>
+                        <strong>账户配额与订阅有效性：</strong><br>
+                        <span style="font-size: 0.78rem; color: #64748b;">排查是否欠费停机、套餐耗尽或中继入口被整体封锁。</span>
+                      </td>
+                      <td>
+                        登录机场用户中心查看剩余流量与到期时间，点击“更新订阅”。
+                      </td>
+                      <td>15 秒</td>
+                      <td><span class="tag-badge green">约 25%</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>第 4 步</strong></td>
+                      <td>
+                        <strong>代理模式与分流阻断：</strong><br>
+                        <span style="font-size: 0.78rem; color: #64748b;">规则模式拦截误杀，或者系统代理端口未被软件激活。</span>
+                      </td>
+                      <td>
+                        切换至“全局模式 (Global)”；重启代理内核；排查防火墙信任。
+                      </td>
+                      <td>10 秒</td>
+                      <td><span class="tag-badge blue">约 15%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="callout-box callout-info">
+                <div class="callout-title">💡 黄金自救法则</div>
+                <p style="font-size: 0.86rem; color: #1e293b; margin: 0; line-height: 1.6;">
+                  遇到突发故障，请先遵循“<strong>校时间 → 查套餐 → 测单节点直连 → 重置系统代理</strong>”的顺序。90% 以上的用户在执行完前两步后即可恢复正常连接。若依然异常，请参考下方各专项深度排查方案。
+                </p>
+              </div>
+            </section>
+
+            <!-- SECTION 2: 9999ms Timeout -->
+            <section id="issue-timeout" class="airport-review-item" style="border-top: 3px solid #ef4444;">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🚨</span> 节点测速全红 9999ms / 超时
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7;">
+                在 Clash、v2rayN 或 Sing-box 客户端点击测速时，如果<strong>所有节点全部变红，提示 9999ms、TIMEOUT、EOF 或 i/o timeout</strong>，这说明客户端在发起握手阶段就遭遇了致命中断。
+              </p>
+
+              <div class="callout-box callout-warning">
+                <div class="callout-title">🔬 科学原理解析：客户端的“测速”到底在测什么？</div>
+                <p style="font-size: 0.85rem; color: #78350f; line-height: 1.65; margin: 0;">
+                  很多人以为测速是客户端向目标节点发出的 ICMP Ping，其实完全不然！主流代理客户端的测速本质是：<strong>客户端首先连接本地 7890 代理端口，将一段 HTTP GET 请求发给节点，再由节点向海外测速靶场（默认通常为 <code>http://www.gstatic.com/generate_204</code> 或 <code>http://cp.cloudflare.com/generate_204</code>）发起请求，当本地收到第一个 HTTP 204 返回报文的时间差，才被计算为“延迟”</strong>。<br>
+                  因此，一旦本地代理端口没通、DNS 污染了节点中继域名、或者延迟测试的目标 URL 本身在国内被阻断，就会导致测速“满盘皆红”。
+                </p>
+              </div>
+
+              <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--color-text-main);">常见原因与深度排查实操：</h3>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">原因 A</span>
+                <div class="diag-step-title">本地代理核心崩溃或本地监听端口被占用 (ECONNREFUSED)</div>
+                <div class="diag-step-content">
+                  虽然客户端界面开启了，但后台的 Clash-Meta 或 Xray 内核可能因配置解析错误、端口冲突（如 7890/10808 端口被其他软件抢占）而悄然崩溃退出。
+                  <div class="terminal-box">
+                    <div class="terminal-header">
+                      <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                      </div>
+                      <span class="terminal-title">PowerShell - 端口监听检测</span>
+                      <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('netstat -ano | findstr :7890');showToast('命令已复制')">复制</button>
+                    </div>
+                    <div class="terminal-body"><span class="prompt">PS C:\> </span><span class="cmd">netstat -ano | findstr :7890</span>
+<span class="comment"># 预期输出必须包含 LISTENING 状态：</span>
+  TCP    127.0.0.1:7890         0.0.0.0:0              <span class="highlight">LISTENING</span>       14820</div>
+                  </div>
+                  <strong>解决方案：</strong>如果在终端运行上述命令没有任何回显，说明本地核心未启动。请在客户端设置中将 Mixed Port 改为其他未被占用的端口（例如 <code>7898</code> 或 <code>17890</code>），然后重新启动内核。
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">原因 B</span>
+                <div class="diag-step-title">国内中继入口域名遭遇本地运营商 DNS 污染 (Bogon IP)</div>
+                <div class="diag-step-content">
+                  许多优质专线机场的中继入口为域名格式（如 <code>sz-entry01.relaynode.cc</code>）。如果你的电脑使用了当地广电/小宽带提供的有毒 DNS，该域名会被解析为 <code>127.0.0.1</code> 或不可达的保留地址，导致客户端无法连上入口。
+                  <div class="terminal-box">
+                    <div class="terminal-header">
+                      <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                      </div>
+                      <span class="terminal-title">CMD / PowerShell - 刷新并重置系统 DNS 缓存</span>
+                      <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('ipconfig /flushdns');showToast('命令已复制')">复制</button>
+                    </div>
+                    <div class="terminal-body"><span class="prompt">PS C:\> </span><span class="cmd">ipconfig /flushdns</span>
+<span class="highlight">已成功刷新 DNS 解析缓存。</span></div>
+                  </div>
+                  <strong>解决方案：</strong>建议在网卡属性中将 IPv4 DNS 手动指定为国内公信力顶级 DNS：<code>223.5.5.5</code>（阿里 DNS）或 <code>119.29.29.29</code>（腾讯 DNSPod）。
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">原因 C</span>
+                <div class="diag-step-title">延迟测试目标 URL 本身被阻断</div>
+                <div class="diag-step-content">
+                  如果配置文件中的测试 URL 设置为 Google 的 <code>http://www.gstatic.com/generate_204</code>，在直连环境下拉取测试时由于国内连不上 Google，也会显示全红。
+                  <p style="margin-top: 8px;">
+                    <strong>解决方案：</strong>在 Clash 设置中将 <code>Test URL</code> 更换为国内直连也通畅的海外 CDN 探针，例如：<br>
+                    • <code>http://cp.cloudflare.com/generate_204</code><br>
+                    • <code>http://www.msftconnecttest.com/connecttest.txt</code>
+                  </p>
+                </div>
+              </div>
+
+              <div class="callout-box callout-tip">
+                <div class="callout-title">💡 进阶验证：使用内置终端测试中继连通性</div>
+                <p style="font-size: 0.85rem; color: #1e293b; margin: 0; line-height: 1.6;">
+                  打开 PowerShell，使用 <code>Test-NetConnection -ComputerName 节点服务器地址 -Port 端口</code>，若 <code>TcpTestSucceeded : True</code> 则表示底层网络畅通。如果显示 False，说明该节点入口当前正遭受阻断或机房故障，建议在 <a href="status.html" style="color:var(--color-teal);font-weight:700;">机场状态监测</a> 查看大盘通告，或临时切换至备用机场。
+                </p>
+              </div>
+            </section>
+
+            <!-- SECTION 3: System Time Sync -->
+            <section id="issue-time-sync" class="airport-review-item" style="border-top: 3px solid #f59e0b;">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>⏰</span> 系统时间不同步导致握手失败
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7;">
+                在所有科学上网故障中，<strong>系统时间偏差是导致“明明节点在线、测速正常，但任何网页都打不开”的头号杀手</strong>。很多用户重装了系统、换了 3 个客户端都无法解决，最后发现仅仅是电脑慢了 70 秒。
+              </p>
+
+              <div class="callout-box callout-danger">
+                <div class="callout-title">🔐 为什么差几十秒会导致握手彻底失败？密码学底层揭秘</div>
+                <div style="font-size: 0.85rem; color: #7f1d1d; line-height: 1.65;">
+                  现代代理协议（包括 <strong>VMess、VLESS Reality、Shadowsocks-2022、Hysteria 2、TUIC</strong>）高度注重通信隐蔽性与抗审查能力：
+                  <ul style="margin: 8px 0 8px 18px;">
+                    <li><strong>防重放攻击机制（Replay Protection）：</strong>以 VMess 协议为例，客户端发出的认证请求头中包含基于系统当前 UNIX 时间戳生成的 16 字节哈希值。服务端只接受时间误差在 <strong>±90 秒以内（部分严苛服务端设置为 ±30 秒）</strong>的请求。超出该时间窗口的数据包，服务端会判定为黑客的恶意重放攻击并直接无视抛弃（Drop）！</li>
+                    <li><strong>X.509 数字证书有效窗口（TLS Handshake）：</strong>TLS 1.3 握手时，客户端校验服务端证书的 <code>notBefore</code> 和 <code>notAfter</code> 绝对时间。若本地时间漂移到证书颁发前或过期后，浏览器直接抛出 <code>NET::ERR_CERT_DATE_INVALID</code> 强行熔断连接。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--color-text-main);">为什么 Windows 点击“立即同步”总是提示超时？</h3>
+              <p style="color: var(--color-text-sub); font-size: 0.9rem; line-height: 1.65;">
+                Windows 默认的 NTP 授时服务器是 <code>time.windows.com</code>，由于该服务器位于微软美国数据中心，在中国大陆地区有极高的丢包率和超时阻断。因此必须将其更换为中国国内的权威顶级 NTP 服务器（如阿里云或国家授时中心）。
+              </p>
+
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-dots">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                  </div>
+                  <span class="terminal-title">管理员 PowerShell - 一键配置阿里/国家授时中心 NTP 并强制对时</span>
+                  <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('w32tm /config /manualpeerlist:\"ntp.aliyun.com,0x1 ntp.ntsc.ac.cn,0x1\" /syncfromflags:manual /reliable:YES /update; Stop-Service w32time; Start-Service w32time; w32tm /resync /force');showToast('PowerShell 授时脚本已复制')">复制</button>
+                </div>
+                <div class="terminal-body"><span class="comment"># 请以管理员权限运行 PowerShell，复制执行以下命令：</span>
+<span class="prompt">PS C:\> </span><span class="cmd">w32tm /config /manualpeerlist:"ntp.aliyun.com,0x1 ntp.ntsc.ac.cn,0x1" /syncfromflags:manual /reliable:YES /update</span>
+<span class="prompt">PS C:\> </span><span class="cmd">Restart-Service w32time</span>
+<span class="prompt">PS C:\> </span><span class="cmd">w32tm /resync /force</span>
+<span class="highlight">正在将同步命令发送到本地计算机... 命令成功完成。</span></div>
+              </div>
+
+              <div class="data-table-wrapper" style="margin-top: 14px;">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>操作系统平台</th>
+                      <th>图形界面设置路径</th>
+                      <th>核心校验标准</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Windows 10 / 11</strong></td>
+                      <td>按 <code>Win + I</code> 打开设置 → 时间和语言 → 日期和时间 → 开启“自动设置时间”并点击<strong>“立即同步”</strong>。</td>
+                      <td>与标准北京时间差 &lt; 5 秒</td>
+                    </tr>
+                    <tr>
+                      <td><strong>macOS 苹果电脑</strong></td>
+                      <td>系统设置 → 通用 → 日期与时间 → 开启“自动设置时间和日期”，时间服务器输入 <code>time.apple.com</code>。</td>
+                      <td>自动 NTP 网络校对</td>
+                    </tr>
+                    <tr>
+                      <td><strong>iOS / iPhone</strong></td>
+                      <td>设置 → 通用 → 日期与时间 → 开启<strong>“自动设置”</strong>（需保持蜂窝数据连接通畅）。</td>
+                      <td>基站自动广播校时</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Android 安卓手机</strong></td>
+                      <td>设置 → 系统设置 → 日期和时间 → 开启“使用网络提供的时间”与“使用网络提供的时区”。</td>
+                      <td>NITZ 运营商同步</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="callout-box callout-tip">
+                <div class="callout-title">⚠️ 硬件故障警示：主板 CMOS 纽扣电池掉电</div>
+                <p style="font-size: 0.85rem; color: #1e293b; margin: 0; line-height: 1.6;">
+                  若台式电脑每次开机后系统时间都会回退至 2020 年或主板出厂年份，说明电脑主板上的 <strong>CR2032 纽扣电池已耗尽电量</strong>，导致断电后 RTC 时钟停走。更换一颗 5 元的 CR2032 电池即可彻底绝除此类故障。
+                </p>
+              </div>
+            </section>
+
+            <!-- SECTION 4: Subscription fail -->
+            <section id="issue-subscription" class="airport-review-item" style="border-top: 3px solid #0284c7;">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🔄</span> 订阅链接无法更新与拉取失败
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7;">
+                在客户端中点击“更新订阅（Update Subscription）”，频繁弹出 <code>Network Error</code>、<code>Failed to fetch</code>、<code>403 Forbidden</code> 或 <code>SSL Handshake Failed</code>。这是用户最头疼的“断网死锁问题”——没有节点就没法更新订阅，无法更新订阅就获取不到新节点。
+              </p>
+
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>故障报错特征</th>
+                      <th>底层根因分析</th>
+                      <th>核心解法</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>403 Forbidden / Cloudflare 5秒盾</code></td>
+                      <td>机场开启了 Cloudflare 防火墙，Clash 默认 UA 被识别为恶意爬虫直接拦截。</td>
+                      <td>在客户端设置中伪装 <code>User-Agent</code> 为标准浏览器或主流软件。</td>
+                    </tr>
+                    <tr>
+                      <td><code>Network Error / Connect ECONNREFUSED</code></td>
+                      <td>订阅分发域名在国内直连环境下遭到 GFW DNS 污染或 SNI 阻断。</td>
+                      <td>开启客户端的<strong>“使用代理更新订阅”</strong>，借用现有节点更新。</td>
+                    </tr>
+                    <tr>
+                      <td><code>SSL Handshake Failed / Self Signed Cert</code></td>
+                      <td>自建转换器证书链不完整，或系统根证书证书库缺失权威 CA。</td>
+                      <td>在订阅配置项中临时勾选<strong>“跳过证书验证 (Skip Cert Verify)”</strong>。</td>
+                    </tr>
+                    <tr>
+                      <td><code>Empty Config / Invalid YAML</code></td>
+                      <td>订阅节点已被机场后台全部禁用，或转换器接口返回了 HTML 错误页。</td>
+                      <td>登录官网查看账户是否欠费，重新复制最新 Base64/Clash 专用链接。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--color-text-main);">实用破局方案：</h3>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">方法 1：双通道更新法则（通过代理更新 vs 直连更新）</div>
+                <div class="diag-step-content">
+                  许多客户端（如 Clash Verge Rev、v2rayN）默认会在直连环境下请求订阅。如果机场的分发服务器部署在海外，就会被拦截。
+                  <p style="margin-top: 6px;">
+                    • <strong>如果当前还有可用节点：</strong>请在软件设置中打开“更新订阅时使用系统代理”，让流量经过现有梯子绕开封锁拉取配置。<br>
+                    • <strong>如果当前所有节点都已阵亡：</strong>切断系统代理，打开手机热点连接电脑，尝试登录机场官网重新获取无污染直连备用分发域名。
+                  </p>
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">方法 2：修改 User-Agent 绕过 Cloudflare WAF 质询</div>
+                <div class="diag-step-content">
+                  许多机场前端受到 DDoS 攻击后会开启 Cloudflare Turnstile 质询盾。由于内置爬虫缺少完整 JS 渲染引擎，会导致 403 报错。
+                  <p style="margin-top: 6px;">
+                    在 Clash Verge 的“订阅设置”或订阅 URL 末尾添加参数，或者在全局应用设置中将 User-Agent 修改为：<br>
+                    <code>clash-verge/v1.7.5</code> 或 <code>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36</code>
+                  </p>
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">方法 3：手动导入离线 YAML 配置文件（保底绝招）</div>
+                <div class="diag-step-content">
+                  当客户端由于网络环境死活拉取不了订阅时：直接用电脑浏览器（或者手机浏览器）访问订阅链接。浏览器通常能正常下载或展示 YAML 文本内容。将其保存为 <code>config.yaml</code> 文件，然后在客户端中选择“本地文件导入 (Import Local File)”，即可 100% 绕开拉取失败。
+                </div>
+              </div>
+            </section>
+
+            <!-- SECTION 5: Disconnect Internet -->
+            <section id="issue-no-internet" class="airport-review-item" style="border-top: 3px solid #8b5cf6;">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🔌</span> 退出代理后电脑彻底断网修复
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7;">
+                这是广大用户最为恐慌的高频问题：<strong>“我刚刚关闭了 Clash 或 v2rayN，结果发现电脑连百度都打不开了，微信也不断提示重连，我是不是把电脑网卡烧了？”</strong>
+              </p>
+
+              <div class="callout-box callout-danger">
+                <div class="callout-title">👻 核心原理解密：“幽灵系统代理”（Ghost Proxy）是怎么产生的？</div>
+                <p style="font-size: 0.85rem; color: #7f1d1d; line-height: 1.65; margin: 0;">
+                  Windows 的系统代理机制基于 <strong>WinINet (Windows Internet Settings)</strong>。当你在客户端勾选“系统代理”时，软件会向注册表写入指令：<br>
+                  <code>ProxyEnable = 1</code> 并绑定 <code>ProxyServer = 127.0.0.1:7890</code>。<br>
+                  这告诉全系统所有的浏览器和应用：<strong>“发送任何网络流量，必须先丢给本地 127.0.0.1 的 7890 端口！”</strong><br>
+                  正常退出软件时，软件会负责把 <code>ProxyEnable</code> 复位修改回 <code>0</code>。但如果客户端遭遇了<strong>程序崩溃、电脑睡眠唤醒、任务管理器强杀、或者在未取消系统代理前就直接点击了“退出”</strong>，注册表键值依然停留在 <code>1</code>！<br>
+                  此时 7890 端口上根本没有软件在工作，所有网页的 TCP SYN 握手请求丢向 127.0.0.1 会立即收到内核的 <code>RST</code> 拒绝包，从而造成整机“假死断网”。
+                </p>
+              </div>
+
+              <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--color-text-main);">3 种秒级复活手段：</h3>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">方案 A · 5秒极速命令</span>
+                <div class="diag-step-title">运行一键注册表重置命令（无需打开任何设置）</div>
+                <div class="diag-step-content">
+                  按键盘快捷键 <code>Win + R</code> 打开运行窗口，输入 <code>cmd</code> 回车，然后复制粘贴以下命令回车：
+                  <div class="terminal-box">
+                    <div class="terminal-header">
+                      <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                      </div>
+                      <span class="terminal-title">CMD / 批处理 - 强制关闭 WinINet 与 WinHTTP 代理残留</span>
+                      <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\" /v ProxyEnable /t REG_DWORD /d 0 /f & netsh winhttp reset proxy');showToast('CMD 修复命令已复制')">复制</button>
+                    </div>
+                    <div class="terminal-body"><span class="prompt">C:\> </span><span class="cmd">reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0 /f</span>
+<span class="prompt">C:\> </span><span class="cmd">netsh winhttp reset proxy</span>
+<span class="highlight">操作成功完成。当前 WinHTTP 代理设置：直接访问(无代理服务器)。</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">方案 B · 界面操作</span>
+                <div class="diag-step-title">手动在 Windows 系统设置中关闭代理</div>
+                <div class="diag-step-content">
+                  1. 按 <code>Win + I</code> 打开 Windows 设置。<br>
+                  2. 点击 <strong>“网络和 Internet” → “代理”</strong>。<br>
+                  3. 找到<strong>“手动设置代理”</strong>，将<strong>“使用代理服务器”开关由“开”拨动为“关”</strong>，并点击保存。<br>
+                  4. 刷新浏览器网页，网络立即瞬间满血复活。
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <span class="diag-step-badge">方案 C · 客户端反向重置</span>
+                <div class="diag-step-title">重新打开 Clash 走一次“开 - 关”循环</div>
+                <div class="diag-step-content">
+                  如果不习惯敲命令或找设置：直接重新双击运行 Clash Verge 或 v2rayN，在控制面板中<strong>重新勾选“系统代理”，等待 2 秒钟，然后再次手动取消勾选“系统代理”</strong>。客户端会主动调用 Win32 API 规范地清理残留键值。
+                </div>
+              </div>
+            </section>
+
+            <!-- SECTION 6: TUN Mode -->
+            <section id="issue-tun" class="airport-review-item" style="border-top: 3px solid #0d9488;">
+              <h2 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🛡️</span> TUN 虚拟网卡安装与冲突解决
+              </h2>
+              <p style="color: var(--color-text-sub); font-size: 0.92rem; line-height: 1.7;">
+                系统代理（System Proxy）虽然简单，但它有个致命缺陷：<strong>只能接管遵循 WinINet 的浏览器，对终端命令行（CMD / PowerShell / Git Clone）、网络联机游戏、WSL2、Docker、Discord 等软件完全无效</strong>。想要让全系统所有程序 100% 强制走代理，就必须启用 <strong>TUN 虚拟网卡模式</strong>。但 TUN 模式也伴随着驱动失败与路由冲突。
+              </p>
+
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>对比维度</th>
+                      <th>普通系统代理 (System Proxy)</th>
+                      <th>TUN 虚拟网卡模式 (TUN Mode)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>协议栈层级</strong></td>
+                      <td>OSI 第 7 层 / 应用层 (HTTP / Socks5)</td>
+                      <td><strong>OSI 第 3 层 / 网络层 (IP Packet)</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>应用接管能力</strong></td>
+                      <td>仅限于 Chrome/Edge 等主动读取系统代理的软件</td>
+                      <td><strong>全平台无死角接管 (终端/Git/游戏/Node/Python)</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>UDP 数据包转发</strong></td>
+                      <td>不支持或需二次封装</td>
+                      <td><strong>完全原生支持 (适合语音与联机游戏)</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>驱动依赖与权限</strong></td>
+                      <td>普通用户权限即可运行</td>
+                      <td><strong>必须依赖管理员权限与 Wintun 驱动</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--color-text-main);">TUN 模式 4 大典型报错与专业解决：</h3>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">1. Wintun 驱动安装失败 / 提示 `Failed to create TUN device`</div>
+                <div class="diag-step-content">
+                  <strong>底层根因：</strong>Wintun 是由知名开源项目 WireGuard 打造的高性能 Windows 网络驱动。如果在首次开启 TUN 时未赋予管理员权限，或者被 360 安全卫士、火绒、Windows Defender 拦截了驱动注入，就会创建网卡失败。
+                  <p style="margin-top: 6px;">
+                    <strong>解决方案：</strong><br>
+                    • 右键客户端快捷方式，务必选择<strong>“以管理员身份运行”</strong>。<br>
+                    • 在客户端的“服务模式 (Service Mode)”中点击 <code>Install</code>，成功后图标会变为绿色启用状态。
+                  </p>
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">2. 开启 TUN 后瞬间全机断网：路由回环死锁 (Loopback Deadlock)</div>
+                <div class="diag-step-content">
+                  <strong>底层根因：</strong>这是最危险的网络风暴——TUN 网卡接管了全局路由，却把<strong>代理客户端连接机场节点入口的外网流量也打包丢进了 TUN 网卡自身</strong>，导致数据包在虚拟网卡和物理网卡之间无限循环吞吐，瞬间占满 CPU 并造成断网死锁。
+                  <p style="margin-top: 6px;">
+                    <strong>解决方案：</strong>检查配置文件中的 TUN 模块设置，务必确保开启了 <strong>严格路由 (Strict Route)</strong> 与 <strong>自动绕过直连环路 (auto-detect-interface: true)</strong>：
+                  </p>
+                  <div class="terminal-box">
+                    <div class="terminal-header">
+                      <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                      </div>
+                      <span class="terminal-title">YAML 规范配置示例 - Clash Meta TUN 模块</span>
+                    </div>
+                    <div class="terminal-body"><span class="comment"># 推荐的防御路由回环 TUN 配置项：</span>
+tun:
+  enable: <span class="highlight">true</span>
+  stack: mixed            <span class="comment"># system / gvisor / mixed</span>
+  auto-route: <span class="highlight">true</span>        <span class="comment"># 自动设置全局路由</span>
+  auto-detect-interface: <span class="highlight">true</span>  <span class="comment"># 核心：自动探测物理出站网卡，防止回环死锁</span>
+  dns-hijack:
+    - any:53              <span class="comment"># 拦截 53 端口 DNS 查询，杜绝污染与泄漏</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="diag-step-card">
+                <div class="diag-step-title">3. 与 WSL2、Hyper-V 或反作弊软件 (Valorant Vanguard) 冲突</div>
+                <div class="diag-step-content">
+                  <strong>底层根因：</strong>某些虚拟交换机（vEthernet）或带有内核级驱动的游戏反作弊程序会篡改网络驱动栈，导致 Wintun 抛出设备忙错误。
+                  <p style="margin-top: 6px;">
+                    <strong>解决方案：</strong><br>
+                    • 在 PowerShell 中运行 <code>Get-NetAdapter</code> 查看当前所有虚拟适配器，禁用不用的旧版本 TAP 网卡。<br>
+                    • 游戏对局期间建议关闭 TUN 模式，切回常规“系统代理”或使用游戏自带的专线加速器。
+                  </p>
+                </div>
+              </div>
+
+              <div class="callout-box callout-tip">
+                <div class="callout-title">💡 总结：构建稳健不倒的科学上网工作流</div>
+                <p style="font-size: 0.86rem; color: #1e293b; margin: 0; line-height: 1.65;">
+                  掌握了上述 6 大核心机制后，遇到网络问题便可泰然自若。日常使用中建议：优先使用 <strong>Clash Verge Rev 或 Sing-box</strong> 的规则分流模式；遇打不开命令行或特殊软件时开启 <strong>TUN 模式</strong>；万一意外断网随手执行一条 <strong>注册表清零命令</strong>。同时，推荐在 <a href="reviews.html" style="color:var(--color-teal);font-weight:700;">机场深度评测</a> 与 <a href="compare.html" style="color:var(--color-teal);font-weight:700;">机场参数对比</a> 中挑选 1~2 家具有多地 BGP 入口的优质专线作为主备冗余。
+                </p>
+              </div>
+
+            </section>
+
+          </div>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN: Outline / Table of Contents -->
+      <aside class="sidebar-right">
+        
+        <div class="toc-card">
+          <div class="toc-header">
+            <div class="toc-title">
+              <span>📑</span>
+              <span>自检大纲</span>
+            </div>
+            <span class="reading-percent" id="readingPercent">0%</span>
+          </div>
+
+          <div class="reading-progress-track">
+            <div class="reading-progress-bar" id="readingProgress"></div>
+          </div>
+
+          <ul class="toc-list" id="tocList">
+            <!-- Dynamic generated by JS -->
+          </ul>
+        </div>
+
+        <div class="quick-helper-card">
+          <div class="helper-icon">📊</div>
+          <div class="helper-title">节点出故障还是网络问题？</div>
+          <div class="helper-desc">查看全网主流专线机场 24 小时节点存活率、延迟抖动与自动化健康监控大盘。</div>
+          <a href="status.html" class="btn-teal btn-pill" style="width: 100%; box-sizing: border-box; text-align: center;">查看实时健康度看板 →</a>
+        </div>
+
+        <div class="quick-helper-card" style="margin-top: 14px; background: #ffffff;">
+          <div class="helper-icon">📱</div>
+          <div class="helper-title">客户端下载与进阶配置</div>
+          <div class="helper-desc">Clash Verge Rev、v2rayN、Sing-box、Surge、Shadowrocket 客户端安装教程与优化指南。</div>
+          <a href="clients.html" class="btn-white btn-pill" style="width: 100%; box-sizing: border-box; text-align: center; border: 1px solid var(--color-border);">浏览客户端指南 →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" title="返回顶部">↑</button>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-input-wrap">
+        <span>🔍</span>
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="搜索故障现象、测速9999ms、时间同步、TUN模式...">
+        <button id="searchClose" style="background:none;border:none;cursor:pointer;font-size:1.2rem;color:#888;">✕</button>
+      </div>
+      <div class="search-modal-results">
+        <a href="network.html#quick-wizard" class="search-result-item">
+          <div class="search-res-title">🧭 30秒故障智能自检急救向导</div>
+          <div class="search-res-snippet">四层漏斗诊断模型，1分钟快速定位网络链路阻断层级</div>
+        </a>
+        <a href="network.html#issue-timeout" class="search-result-item">
+          <div class="search-res-title">🚨 节点测速全红 9999ms / 超时排查</div>
+          <div class="search-res-snippet">本地核心监听状态、DNS 污染排查与测速靶场 URL 切换</div>
+        </a>
+        <a href="network.html#issue-time-sync" class="search-result-item">
+          <div class="search-res-title">⏰ 系统时间不同步导致握手失败</div>
+          <div class="search-res-snippet">VMess防重放机制与TLS握手，国内权威NTP授时一键修复脚本</div>
+        </a>
+        <a href="network.html#issue-no-internet" class="search-result-item">
+          <div class="search-res-title">🔌 退出代理后电脑彻底断网修复</div>
+          <div class="search-res-snippet">清除幽灵系统代理WinINet注册表残留，5秒极速恢复网络</div>
+        </a>
+        <a href="network.html#issue-tun" class="search-result-item">
+          <div class="search-res-title">🛡️ TUN 虚拟网卡安装与冲突解决</div>
+          <div class="search-res-snippet">Wintun驱动安装、路由回环死锁防护与管理员权限修复</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>梯子推荐指南 · TiziTuijian</h4>
+        <p>专注全球网络访问加速、IEPL专线压测与科学上网知识普及。独立客观测评，帮助每个人畅享自由网络连接。</p>
+      </div>
+      <div class="footer-col">
+        <h5>核心栏目</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">梯子推荐天梯榜</a></li>
+          <li><a href="reviews.html">机场深度评测</a></li>
+          <li><a href="compare.html">机场参数对比</a></li>
+          <li><a href="coupons.html">独家优惠券</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>技术与工具</h5>
+        <ul class="footer-links">
+          <li><a href="clients.html">客户端配置教程</a></li>
+          <li><a href="network.html">网络故障诊断</a></li>
+          <li><a href="ai-tools.html">AI工具解锁</a></li>
+          <li><a href="status.html">实时状态监测</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>索引与合规</h5>
+        <ul class="footer-links">
+          <li><a href="sitemap.html">全站网站地图</a></li>
+          <li><a href="sitemap.xml" target="_blank">XML Sitemap</a></li>
+          <li><a href="risk.html">风险预警黑名单</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('本站仅供技术学习交流与网络科研')">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 TiziTuijian.online 全球网络评测矩阵. All rights reserved.</div>
+      <div>Domain: <a href="https://tizituijian.online" style="color:inherit;font-weight:bold;">tizituijian.online</a> | Designed with Claymorphism &amp; Modern Editorial Aesthetics.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

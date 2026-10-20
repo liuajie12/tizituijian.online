@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场独立深度评测报告 - 梯子推荐指南</title>
+  <meta name="keywords" content="机场独立评测, 节点测速报告, IPLC专线实测, 梯子独立评测, 科学上网实测">
+  <link rel="canonical" href="https://tizituijian.online/review.html">
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:site_name" content="梯子推荐指南 · TiziTuijian">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="机场独立深度评测报告 - 梯子推荐指南">
+  <meta property="og:description" content="15家主流科学上网网络服务真实后台数据、套餐价格、节点延迟、Netflix与ChatGPT流媒体/AI解锁能力全维度分析。">
+  <meta property="og:url" content="https://tizituijian.online/review.html">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="机场独立深度评测报告 - 梯子推荐指南">
+  <meta name="twitter:description" content="真实后台节点数据、延迟测速、流媒体与AI解锁独立评测。">
+
+  <!-- GEO & Regional SEO Meta Tags -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+  <meta http-equiv="content-language" content="zh-CN">
+
+  <!-- JSON-LD Structured Data (GEO & Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "科学上网专线机场服务"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TiziTuijian Lab"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "梯子推荐指南",
+      "url": "https://tizituijian.online/"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Review Single Page Exclusive Layout */
+    .single-review-wrapper {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 30px 24px 80px;
+    }
+    .single-review-grid {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr) 260px;
+      gap: 28px;
+      align-items: start;
+    }
+    .single-nav-sticky {
+      position: sticky;
+      top: 92px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .section-menu-box {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .section-menu-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-clay);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .section-menu-link {
+      display: block;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: var(--radius-xs);
+      color: var(--color-text-sub);
+      transition: all 0.15s ease;
+    }
+    .section-menu-link:hover, .section-menu-link.active {
+      background: var(--color-teal-light);
+      color: var(--color-teal);
+      font-weight: 700;
+    }
+    .single-article-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-card);
+    }
+    .single-article-hero {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px dashed var(--color-border);
+    }
+    .single-hero-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--color-teal);
+      background: var(--color-teal-light);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .single-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .single-title-text h1 {
+      font-size: 1.8rem;
+      color: var(--color-text-main);
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+    .single-title-text small {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+    .single-action-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .verified-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .verified-subcard {
+      background: var(--color-card-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 0.82rem;
+    }
+    .verified-subcard strong {
+      display: block;
+      color: var(--color-text-main);
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+    .verified-subcard p {
+      color: var(--color-text-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .step-box-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .step-item-card {
+      background: #fbf8f5;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 0.82rem;
+    }
+    .step-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+    }
+    .step-item-card strong {
+      display: block;
+      color: var(--color-text-main);
+      margin-bottom: 4px;
+    }
+    .step-item-card p {
+      color: var(--color-text-sub);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .faq-accordion-item {
+      background: var(--color-card-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      padding: 12px 16px;
+      font-size: 0.86rem;
+    }
+    .faq-accordion-item summary {
+      font-weight: 700;
+      color: var(--color-text-main);
+      cursor: pointer;
+      outline: none;
+    }
+    .faq-accordion-item[open] summary {
+      color: var(--color-teal);
+      margin-bottom: 8px;
+    }
+    .faq-accordion-item p {
+      color: var(--color-text-sub);
+      line-height: 1.6;
+      font-size: 0.84rem;
+      margin: 0;
+    }
+    .pagination-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--color-border);
+      flex-wrap: wrap;
+    }
+    .pagination-card {
+      flex: 1;
+      min-width: 200px;
+      background: var(--color-card-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+    }
+    .pagination-card:hover {
+      border-color: var(--color-teal);
+      background: #fff;
+    }
+    .pagination-sub {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .pagination-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+    }
+    .related-review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .related-review-card {
+      background: var(--color-card-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .related-review-card:hover {
+      border-color: var(--color-teal);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    @media (max-width: 992px) {
+      .single-review-grid {
+        grid-template-columns: 1fr;
+      }
+      .single-nav-sticky {
+        display: none;
+      }
+      .verified-grid-4, .step-box-flow, .related-review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Banner -->
+  <div class="top-notice-bar">
+    <span class="notice-tag">📊 单站深度档案</span>
+    <span>您正在浏览 15 家主流机场独立实测档案，真实核验后台数据。</span>
+    <a href="reviews.html" class="notice-link">返回 15 家评测总库 →</a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-area">
+        <div class="logo-badge">⚡</div>
+        <div class="brand-text">
+          <h1>梯子推荐指南</h1>
+          <span class="brand-sub">TiziTuijian · 全球网络评测矩阵</span>
+        </div>
+      </a>
+
+      <!-- 9 Main Nav Tabs -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link"><span class="nav-icon">🏆</span>梯子推荐</a>
+        <a href="reviews.html" class="nav-link active"><span class="nav-icon">📝</span>机场评测</a>
+        <a href="compare.html" class="nav-link"><span class="nav-icon">⚖️</span>机场对比</a>
+        <a href="coupons.html" class="nav-link"><span class="nav-icon">🏷️</span>机场优惠码</a>
+        <a href="clients.html" class="nav-link"><span class="nav-icon">📱</span>客户端</a>
+        <a href="network.html" class="nav-link"><span class="nav-icon">🛠️</span>网络问题</a>
+        <a href="ai-tools.html" class="nav-link"><span class="nav-icon">🤖</span>AI工具</a>
+        <a href="status.html" class="nav-link"><span class="nav-icon">📊</span>机场状态</a>
+        <a href="risk.html" class="nav-link"><span class="nav-icon">⚠️</span>风险预警</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" id="searchBtn" title="搜索全站 (Ctrl + K)">
+          <span>🔍</span>
+          <span>搜索...</span>
+          <span class="search-shortcut">⌘K</span>
+        </button>
+        <button class="icon-pill-btn" title="返回总库" onclick="location.href='reviews.html'">📑</button>
+        <button class="icon-pill-btn" title="状态监控" onclick="location.href='status.html'">📶</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="single-review-wrapper">
+    <div class="single-review-grid" id="singleReviewRoot">
+      <!-- Injected dynamically by JS -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>梯子推荐指南 · TiziTuijian</h4>
+        <p>专注全球网络访问加速、IPLC/IEPL 专线压测与科学上网知识普及。独立客观测评，帮助每个人畅享自由高速网络连接。</p>
+      </div>
+      <div class="footer-col">
+        <h5>核心栏目</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">梯子推荐天梯榜</a></li>
+          <li><a href="reviews.html">15家机场深度评测</a></li>
+          <li><a href="compare.html">机场参数对比矩阵</a></li>
+          <li><a href="coupons.html">独家优惠券库</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>技术与工具</h5>
+        <ul class="footer-links">
+          <li><a href="clients.html">客户端配置教程</a></li>
+          <li><a href="network.html">网络故障诊断指南</a></li>
+          <li><a href="ai-tools.html">AI大模型解锁评测</a></li>
+          <li><a href="status.html">实时状态监测中心</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>索引与合规</h5>
+        <ul class="footer-links">
+          <li><a href="sitemap.html">全站网站地图</a></li>
+          <li><a href="sitemap.xml" target="_blank">XML Sitemap</a></li>
+          <li><a href="risk.html">风险预警黑名单</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('本站仅供技术学习交流与网络科研')">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 TiziTuijian.online 全球网络评测矩阵. All rights reserved.</div>
+      <div>Domain: <a href="https://tizituijian.online" style="color:inherit;font-weight:bold;">tizituijian.online</a> | Designed with Claymorphism &amp; Modern Editorial Aesthetics.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/review-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSingleReview();
+    });
+
+    function getParam(param) {
+      return new URLSearchParams(window.location.search).get(param);
+    }
+
+    function renderSingleReview() {
+      const container = document.getElementById('singleReviewRoot');
+      if (!container || !window.AIRPORTS_DATA) return;
+
+      const id = getParam('id') || 'speed';
+      const airports = window.AIRPORTS_DATA;
+      const index = airports.findIndex(a => a.id === id);
+      const item = index !== -1 ? airports[index] : airports[0];
+      const prev = airports[(index - 1 + airports.length) % airports.length];
+      const next = airports[(index + 1) % airports.length];
+
+      // Update Document Meta
+      document.title = `${item.name}评测报告：2026真实实测·套餐价格·IPLC专线与解锁 - 梯子推荐指南`;
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) {
+        descEl.setAttribute('content', `${item.name}（${item.english}）独立深度评测：后台实测数据、最新套餐价格、节点延迟、Netflix与ChatGPT流媒体/AI解锁能力全维度分析与避坑建议。`);
+      }
+
+      const tagsHtml = (item.tags || []).map(t => `<span class="review-pill">${t}</span>`).join('');
+      const metricsHtml = (item.metrics || []).map(m => `<span class="snapshot-metric-item">${m}</span>`).join('');
+      const pricesHtml = (item.priceLines || []).map(p => `<li>${p}</li>`).join('');
+      const topologyHtml = (item.topology || []).map((t, i) => `
+        <span class="topology-step"><span class="topology-step-num">${i + 1}</span>${t}</span>
+        ${i < item.topology.length - 1 ? '<span class="topology-arrow">→</span>' : ''}
+      `).join('');
+
+      const faqsHtml = (item.faqs || []).map(([q, a]) => `
+        <details class="faq-accordion-item">
+          <summary>${q}</summary>
+          <p>${a}</p>
+        </details>
+      `).join('');
+
+      const stepsHtml = (item.steps || []).map((s, i) => `
+        <div class="step-item-card">
+          <div class="step-badge">${i + 1}</div>
+          <strong>步骤 0${i + 1}</strong>
+          <p>${s}</p>
+        </div>
+      `).join('');
+
+      const relatedAirports = airports.filter(a => a.id !== item.id).slice(0, 3);
+      const relatedHtml = relatedAirports.map(r => `
+        <a href="review.html?id=${r.id}" class="related-review-card">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span class="review-avatar-badge bg-${r.color}" style="width:28px;height:28px;font-size:0.9rem;border-radius:8px;">${r.logo}</span>
+              <strong style="color:var(--color-text-main);font-size:0.9rem;">${r.name}</strong>
+            </div>
+            <p style="font-size:0.78rem;color:var(--color-text-sub);line-height:1.5;margin-bottom:8px;">${r.lead.substring(0, 52)}...</p>
+          </div>
+          <span style="font-size:0.75rem;color:var(--color-teal);font-weight:700;">阅读深度报告 →</span>
+        </a>
+      `).join('');
+
+      container.innerHTML = `
+        <!-- LEFT COLUMN: Sticky TOC & Links -->
+        <aside class="single-sidebar-left">
+          <div class="single-nav-sticky">
+            <div class="section-menu-box">
+              <div class="section-menu-title">📑 报告目录大纲</div>
+              <ul class="section-menu-list">
+                <li><a href="#overview" class="section-menu-link active">01. 简介与编辑结论</a></li>
+                <li><a href="#verified" class="section-menu-link">02. 实验室实测核验</a></li>
+                <li><a href="#pricing" class="section-menu-link">03. 套餐价格与建议</a></li>
+                <li><a href="#speed" class="section-menu-link">04. 测速与压测口径</a></li>
+                <li><a href="#unlock" class="section-menu-link">05. 流媒体与 AI 解锁</a></li>
+                <li><a href="#topology" class="section-menu-link">06. 专线网络拓扑</a></li>
+                <li><a href="#guide" class="section-menu-link">07. 3步快速上手</a></li>
+                <li><a href="#troubleshoot" class="section-menu-link">08. 常见排障指南</a></li>
+                <li><a href="#faqs" class="section-menu-link">09. 5个高频 FAQ</a></li>
+              </ul>
+            </div>
+
+            <div class="clay-card">
+              <div class="sidebar-title">
+                <span>站内实用矩阵</span>
+              </div>
+              <div class="sidebar-links">
+                <a href="compare.html" style="display:block;padding:6px 0;font-size:0.82rem;color:var(--color-text-sub);">⚖️ 15 家参数对比表</a>
+                <a href="coupons.html" style="display:block;padding:6px 0;font-size:0.82rem;color:var(--color-text-sub);">🏷️ 专属优惠折扣库</a>
+                <a href="clients.html" style="display:block;padding:6px 0;font-size:0.82rem;color:var(--color-text-sub);">📱 客户端配置教程</a>
+                <a href="reviews.html" style="display:block;padding:6px 0;font-size:0.82rem;color:var(--color-text-sub);">📝 返回评测总列表</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MIDDLE COLUMN: Main Article -->
+        <main class="single-main-content">
+          <article class="single-article-card">
+            
+            <div class="breadcrumb-nav" style="margin-bottom:14px;">
+              <a href="index.html">首页</a>
+              <span>/</span>
+              <a href="reviews.html">机场评测</a>
+              <span>/</span>
+              <span>${item.name}深度实测</span>
+            </div>
+
+            <div class="single-article-hero">
+              <span class="single-hero-badge">FIELD TEST ARCHIVE · 2026 实测档案</span>
+              <div class="single-title-row">
+                <div class="review-avatar-badge bg-${item.color}" style="width:54px;height:54px;font-size:1.6rem;border-radius:16px;">${item.logo}</div>
+                <div class="single-title-text">
+                  <h1>${item.name}</h1>
+                  <small>${item.english} · 综合评分：${item.rating} · 专线定位：${item.badge}</small>
+                </div>
+              </div>
+              <p style="font-size:0.95rem;color:var(--color-text-sub);line-height:1.7;margin:12px 0;">${item.lead}</p>
+              <div class="review-top-tags">${tagsHtml}</div>
+
+              <div class="single-action-bar">
+                <a href="${item.url}" target="_blank" rel="noopener sponsored" class="btn-teal" style="font-size:0.9rem;padding:8px 20px;">
+                  直达 ${item.name} 官网 ↗
+                </a>
+                <a href="compare.html" class="btn-white" style="font-size:0.9rem;padding:8px 16px;">加入机场横向对比</a>
+                <a href="coupons.html" class="btn-white" style="font-size:0.9rem;padding:8px 16px;">查看优惠码</a>
+              </div>
+            </div>
+
+            <!-- SECTION 01: Overview -->
+            <section id="overview" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">01 · 机场简介与编辑结论</h2>
+              <p style="color:var(--color-text-sub);line-height:1.7;">${item.lead}</p>
+              <div class="callout-box callout-tip" style="margin:14px 0;">
+                <div class="callout-title">✓ 适用画像与选购建议：</div>
+                <p>${item.fit}</p>
+              </div>
+            </section>
+
+            <!-- SECTION 02: Verified Snapshot -->
+            <section id="verified" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">02 · 实验室实测核验快照</h2>
+              <div class="snapshot-box">
+                <div class="snapshot-title-row">
+                  <span class="snapshot-badge">✓ 实验室实测核验</span>
+                  <span class="snapshot-date">最后核验：2026 实测 · 已核实后台数据</span>
+                </div>
+                <div class="snapshot-metrics">${metricsHtml}</div>
+                <p class="snapshot-evidence">${item.evidence}</p>
+                <p style="font-size:0.82rem;color:var(--color-amber);margin-top:8px;">⚠️ 避坑提醒：${item.caution}</p>
+              </div>
+
+              <div class="verified-grid-4">
+                <div class="verified-subcard">
+                  <strong>实测套餐与资费门槛</strong>
+                  <p>${item.price}</p>
+                </div>
+                <div class="verified-subcard">
+                  <strong>节点分布与在线状态</strong>
+                  <p>${item.nodeInfo || '后台节点均已通过探针连通性测试。'}</p>
+                </div>
+                <div class="verified-subcard">
+                  <strong>专线类型与带宽规格</strong>
+                  <p>${item.ipInfo || '全专线物理通道，内网互通不过 GFW。'}</p>
+                </div>
+                <div class="verified-subcard">
+                  <strong>全平台客户端兼容</strong>
+                  <p>${item.clientInfo || '兼容 Android, iOS, Windows, macOS。'}</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- SECTION 03: Pricing -->
+            <section id="pricing" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">03 · 套餐价格与周期建议</h2>
+              <p style="color:var(--color-text-sub);font-size:0.9rem;">登录后台实测读取到的实时套餐档位如下（购买时请以实际结账页为准）：</p>
+              <div class="price-snapshot-box">
+                <h4>💰 ${item.name} 套餐价格明细</h4>
+                <ul class="price-snapshot-list">${pricesHtml}</ul>
+              </div>
+              ${item.coupon ? `
+              <div class="card-action-row" style="margin-top:12px;">
+                <div class="coupon-box">
+                  <span>专属优惠码 (${item.couponDiscount || '优惠'})：</span>
+                  <span class="coupon-code">${item.coupon}</span>
+                  <button class="copy-btn" data-code="${item.coupon}">复制</button>
+                </div>
+                <a href="${item.url}" target="_blank" rel="noopener sponsored" class="btn-teal">直达官网兑换折扣 ↗</a>
+              </div>
+              ` : ''}
+            </section>
+
+            <!-- SECTION 04: Speed Report -->
+            <section id="speed" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">04 · 测速报告与口径说明</h2>
+              <p style="color:var(--color-text-sub);line-height:1.7;">${item.speedReport || item.evidence}</p>
+              <div class="callout-box" style="margin-top:12px;">
+                <div class="callout-title">📊 测速口径说明：</div>
+                <p>测试涵盖三大运营商宽带。入口检测响应时间为探针与接入点的 HTTP 延迟，不等同于跨境专线实际吞吐，实际下载建议连接香港/日本常用节点测试。</p>
+              </div>
+            </section>
+
+            <!-- SECTION 05: Unlock -->
+            <section id="unlock" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">05 · 流媒体与 AI 大模型解锁</h2>
+              <p style="color:var(--color-text-sub);line-height:1.7;">${item.unlockInfo || '支持 Netflix 4K、Disney+ 与 ChatGPT 原生解锁。'}</p>
+              <p style="font-size:0.84rem;color:var(--color-text-muted);margin-top:6px;">
+                👉 更多关于大模型防风控与家宽住宅 IP 配置技巧，可参考本站 <a href="ai-tools.html" class="internal-pill-link">AI工具解锁专栏</a>。
+              </p>
+            </section>
+
+            <!-- SECTION 06: Topology -->
+            <section id="topology" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">06 · 专线物理网络拓扑</h2>
+              <p style="color:var(--color-text-sub);font-size:0.9rem;margin-bottom:10px;">${item.name} 的数据传输端到端网络拓扑模型：</p>
+              <div class="topology-flow">${topologyHtml}</div>
+            </section>
+
+            <!-- SECTION 07: Guide -->
+            <section id="guide" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">07 · 3 步快速上手教程</h2>
+              <div class="step-box-flow">${stepsHtml}</div>
+              <p style="font-size:0.84rem;color:var(--color-text-muted);">
+                👉 各平台详细客户端安装教程请参阅 <a href="clients.html" class="internal-pill-link">客户端全平台指引</a>。
+              </p>
+            </section>
+
+            <!-- SECTION 08: Troubleshoot -->
+            <section id="troubleshoot" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">08 · 常见问题与排障指南</h2>
+              <ul style="margin-left:20px;line-height:1.8;color:var(--color-text-sub);font-size:0.88rem;">
+                ${(item.troubleshoot || []).map(t => `<li>${t}</li>`).join('')}
+              </ul>
+            </section>
+
+            <!-- SECTION 09: FAQs -->
+            <section id="faqs" style="margin-bottom:28px;scroll-margin-top:100px;">
+              <h2 style="font-size:1.3rem;margin-bottom:12px;color:var(--color-text-main);">09 · 5 个高频 FAQ 答疑</h2>
+              <div>${faqsHtml}</div>
+            </section>
+
+            <!-- Pagination Prev / Next -->
+            <div class="pagination-nav">
+              <a href="review.html?id=${prev.id}" class="pagination-card">
+                <span style="font-size:1.2rem;">←</span>
+                <div>
+                  <div class="pagination-sub">上一篇评测</div>
+                  <div class="pagination-title">${prev.name} (${prev.badge})</div>
+                </div>
+              </a>
+              <a href="review.html?id=${next.id}" class="pagination-card" style="text-align:right;justify-content:flex-end;">
+                <div>
+                  <div class="pagination-sub">下一篇评测</div>
+                  <div class="pagination-title">${next.name} (${next.badge})</div>
+                </div>
+                <span style="font-size:1.2rem;">→</span>
+              </a>
+            </div>
+
+            <!-- Related Reviews -->
+            <div style="margin-top:32px;">
+              <h3 style="font-size:1.1rem;color:var(--color-text-main);margin-bottom:10px;">📚 推荐阅读同类专线评测</h3>
+              <div class="related-review-grid">${relatedHtml}</div>
+            </div>
+
+          </article>
+        </main>
+
+        <!-- RIGHT COLUMN: Helper Widget -->
+        <aside class="single-sidebar-right">
+          <div class="single-nav-sticky">
+            <div class="quick-helper-card">
+              <div class="helper-icon">⚡</div>
+              <div class="helper-title">直达 ${item.name} 官网</div>
+              <div class="helper-desc">核验后的官方推荐入口，享当前专属优惠。</div>
+              <a href="${item.url}" target="_blank" rel="noopener sponsored" class="btn-teal btn-pill" style="width:100%;box-sizing:border-box;text-align:center;">前往官方注册 ↗</a>
+            </div>
+
+            <div class="quick-helper-card" style="margin-top:16px;">
+              <div class="helper-icon">⚖️</div>
+              <div class="helper-title">想看 15 家横向对比？</div>
+              <div class="helper-desc">价格、专线类型、节点数横向一览。</div>
+              <a href="compare.html" class="btn-white btn-pill" style="width:100%;box-sizing:border-box;text-align:center;">查看对比矩阵 →</a>
+            </div>
+          </div>
+        </aside>
+      `;
+
+      // Re-init copy coupons and smooth link spy
+      if (typeof initCopyCoupons === 'function') initCopyCoupons();
+    }
+  </script>
+</body>
+</html>

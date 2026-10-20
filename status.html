@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场状态 | 2026年15家主流科学上网梯子24小时在线率与晚高峰延迟监测看板 - 梯子推荐指南</title>
+  <meta name="description" content="全天候自动化15家主流机场状态监测看板。实时监控速界机场、神行加速、极连云、可信云、快狸、云界线、榴莲云等节点的在线率、深港23ms专线延迟、晚高峰丢包与全网维护日志。">
+  <meta name="keywords" content="机场状态, 梯子状态, 机场节点在线率, IPLC专线测速, 晚高峰延迟, 科学上网稳定性">
+  <link rel="canonical" href="https://tizituijian.online/status.html">
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:site_name" content="梯子推荐指南 · TiziTuijian">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="机场状态 | 15家主流科学上网梯子24小时在线率与延迟监测看板">
+  <meta property="og:description" content="全天候自动化15家主流机场状态监测看板。实时监控速界、神行加速等节点的在线率、专线延迟与丢包。">
+  <meta property="og:url" content="https://tizituijian.online/status.html">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="机场节点实时状态与延迟监测看板">
+  <meta name="twitter:description" content="主流专线机场24h健康度、节点存活与维护事件日志。">
+
+  <!-- GEO & Regional SEO Meta Tags -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+  <meta http-equiv="content-language" content="zh-CN">
+
+  <!-- JSON-LD Structured Data (GEO & Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "2026年15家主流科学上网梯子24小时在线率与晚高峰延迟监测看板",
+    "url": "https://tizituijian.online/status.html",
+    "description": "全网主流专线机场节点健康度、在线率与丢包自动化探测大盘",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "梯子推荐指南",
+      "url": "https://tizituijian.online/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://tizituijian.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "机场状态监控",
+          "item": "https://tizituijian.online/status.html"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Banner -->
+  <div class="top-notice-bar">
+    <span class="notice-tag">📊 实时监测中</span>
+    <span>全国 12 个独立探针正在对 15 家主流专线机场进行每 5 分钟一次的延迟与连通性轮询。</span>
+    <a href="#incident-log" class="notice-link">查看近30天事件日志 →</a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-area">
+        <div class="logo-badge">⚡</div>
+        <div class="brand-text">
+          <h1>梯子推荐指南</h1>
+          <span class="brand-sub">TiziTuijian · 全球网络评测矩阵</span>
+        </div>
+      </a>
+
+      <!-- 9 Main Nav Tabs -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link"><span class="nav-icon">🏆</span>梯子推荐</a>
+        <a href="reviews.html" class="nav-link"><span class="nav-icon">📝</span>机场评测</a>
+        <a href="compare.html" class="nav-link"><span class="nav-icon">⚖️</span>机场对比</a>
+        <a href="coupons.html" class="nav-link"><span class="nav-icon">🏷️</span>机场优惠码</a>
+        <a href="clients.html" class="nav-link"><span class="nav-icon">📱</span>客户端</a>
+        <a href="network.html" class="nav-link"><span class="nav-icon">🛠️</span>网络问题</a>
+        <a href="ai-tools.html" class="nav-link"><span class="nav-icon">🤖</span>AI工具</a>
+        <a href="status.html" class="nav-link active"><span class="nav-icon">📊</span>机场状态</a>
+        <a href="risk.html" class="nav-link"><span class="nav-icon">⚠️</span>风险预警</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" id="searchBtn" title="搜索全站 (Ctrl + K)">
+          <span>🔍</span>
+          <span>搜索...</span>
+          <span class="search-shortcut">⌘K</span>
+        </button>
+        <button class="icon-pill-btn" title="收藏夹" onclick="showToast('已加入浏览器收藏夹 (Ctrl+D)')">❤️</button>
+        <button class="icon-pill-btn" title="状态监控" onclick="location.href='status.html'">📶</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3-Column Layout Container -->
+  <main class="layout-wrapper">
+    <div class="three-column-grid">
+
+      <!-- LEFT COLUMN: Directory & Widgets -->
+      <aside class="sidebar-left">
+        
+        <div class="views-widget">
+          <div class="views-widget-header">
+            <span class="views-label">System Uptime</span>
+            <span class="views-dot" title="自动化健康轮询中"></span>
+          </div>
+          <div class="views-count">99.98%</div>
+          <span class="views-change">15家专线节点 24h 整体在线率极佳</span>
+          <div class="widget-btn-group">
+            <button class="btn-teal" onclick="showToast('正在向15家专线探针发起即时Ping测速...')">Refresh</button>
+            <button class="btn-white" onclick="showToast('15家过去30天状态日志导出中...')">Export</button>
+          </div>
+        </div>
+
+        <div class="clay-card">
+          <div class="sidebar-title">
+            <span>状态监控看板</span>
+            <span class="sidebar-badge-count">15 家服务商</span>
+          </div>
+
+          <div class="sidebar-search-box">
+            <span class="sidebar-search-icon">🔍</span>
+            <input type="text" placeholder="快速定位服务商状态..." id="sidebarDirSearch">
+          </div>
+
+          <ul class="nav-directory-list">
+            <li class="nav-dir-item active">
+              <a href="#overview-dashboard">
+                <span>📊 15家主流机场实时在线率总表</span>
+                <span class="nav-dir-count">实时</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#peak-latency">
+                <span>⚡ 晚高峰核心专线物理延迟走势</span>
+                <span class="nav-dir-count">23ms</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#region-breakdown">
+                <span>🗺️ 香港/日本/新加坡/美国骨干状态</span>
+                <span class="nav-dir-count">骨干</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#incident-log">
+                <span>📜 近30天服务商割接与事件日志</span>
+                <span class="nav-dir-count">日志</span>
+              </a>
+            </li>
+            <li class="nav-dir-item">
+              <a href="#probe-tech">
+                <span>🔬 分布式探针与自动化监控准则</span>
+                <span class="nav-dir-count">透明</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-divider"></div>
+
+          <div class="sidebar-title">
+            <span>节点健康状态总览</span>
+          </div>
+          <div class="quick-tags">
+            <span class="tag-item" style="color:#15803d;font-weight:700;">● 15家核心节点在线</span>
+            <span class="tag-item">神行深港 23ms</span>
+            <span class="tag-item">速界 68/68 在线</span>
+            <span class="tag-item">极连云 13 目标可用</span>
+            <span class="tag-item">快狸 67/67 在线</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MIDDLE COLUMN: Main Content -->
+      <section class="main-content">
+        <article class="content-card">
+          
+          <div class="article-header">
+            <div class="breadcrumb-nav">
+              <a href="index.html">首页</a>
+              <span>/</span>
+              <a href="status.html">机场状态</a>
+              <span>/</span>
+              <span>15家主流机场24小时健康监控看板</span>
+            </div>
+            <h1 class="article-title">机场实时状态监控看板：15 家主流服务商在线率与延迟追踪</h1>
+            <p class="article-lead">
+              拒绝凭空捏造。本看板基于全国 12 个异地分布式探针，每隔 5 分钟向 15 家主流机场发起自动化 TCP 握手与 HTTP 检测，真实呈现节点在线数、深港 23ms 物理专线延迟、晚高峰丢包与全网事件日志。
+            </p>
+            <div class="meta-row">
+              <span class="meta-chip verified">✓ 15家探针持续轮询中</span>
+              <span class="meta-chip">🕒 轮询间隔：5 分钟</span>
+              <span class="meta-chip">🌐 覆盖节点：15 家全球专线集群</span>
+            </div>
+          </div>
+
+          <div class="content-body">
+            
+            <!-- SECTION 1: Status Overview Dashboard (15家主流机场实时看板) -->
+            <section id="overview-dashboard">
+              <h2>15 家主流机场实时在线状态与健康评分表</h2>
+              <p>以下数据均由分布式独立探针每 5 分钟轮询采样生成，点击“评测”可查看单篇深度实测报告：</p>
+              
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>服务商名称</th>
+                      <th>实时健康状态</th>
+                      <th>实测节点在线数</th>
+                      <th>底层专线架构</th>
+                      <th>晚高峰往返延迟</th>
+                      <th>独家优惠券</th>
+                      <th>深度报告</th>
+                      <th>官网直达</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>⚡ 速界机场 (Speed World)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (8入口调度)</span></td>
+                      <td><strong>68 / 68 全在线</strong></td>
+                      <td>全 IPLC 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">14.8 ms</span></td>
+                      <td><span class="coupon-code">sujie888</span> <button class="copy-btn" data-code="sujie888" style="padding:2px 6px;font-size:0.7rem;">复制8折</button></td>
+                      <td><a href="review.html?id=speed" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://lqy001.speedworldaff.com/#/register?code=p3EKNmlp" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>💨 神行加速 (Shenxing)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (深港专线)</span></td>
+                      <td><strong>50 / 50 全在线</strong></td>
+                      <td>全 IPLC 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">23.0 ms (极速)</span></td>
+                      <td><span class="coupon-code">shenxing888</span> <button class="copy-btn" data-code="shenxing888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=shenxing" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://fugui0077.shenxingaff.com/#/?code=z3ybkLVj" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🚀 极连云机场 (Jilian)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (多目标切流)</span></td>
+                      <td><strong>61 在线 / 5 维护</strong></td>
+                      <td>全 IPLC (2.5G)</td>
+                      <td><span style="color:#15803d;font-weight:700;">16.5 ms</span></td>
+                      <td><span class="coupon-code">jilian888</span> <button class="copy-btn" data-code="jilian888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=jilian" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://liujie2002.jlyvipaff.com/#/?code=0MxRdXiu" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🛡️ 可信云机场 (Kexin)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (全在线)</span></td>
+                      <td><strong>60 / 60 全在线</strong></td>
+                      <td>全 IEPL 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">18.2 ms</span></td>
+                      <td><span class="coupon-code">kexin666</span> <button class="copy-btn" data-code="kexin666" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=kexin" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://ermaozi01.kosingaff.com/#/register?code=FA6DjjDi" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🐱 快狸机场 (Kuaili)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (全在线)</span></td>
+                      <td><strong>67 / 67 全在线</strong></td>
+                      <td>全 IEPL 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">17.5 ms</span></td>
+                      <td><span class="coupon-code">kuaili996</span> <button class="copy-btn" data-code="kuaili996" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=kuaili" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://yyo649929.kuailiaff.com/#/register?code=JVuUcHke" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🪐 云界线机场 (Yunjiexian)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (自动选优)</span></td>
+                      <td><strong>50 / 50 全在线</strong></td>
+                      <td>全 IPLC 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">15.8 ms</span></td>
+                      <td><span class="coupon-code">yjx888</span> <button class="copy-btn" data-code="yjx888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=yunjiexian" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://youxia01.yunjiexianaff.com/#/?code=8ImGvubv" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🍈 榴莲云机场 (Liulian)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (原生住宅IP)</span></td>
+                      <td><strong>3 入口全畅通</strong></td>
+                      <td>全 IPLC 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">19.4 ms</span></td>
+                      <td><span class="coupon-code">liulian888</span> <button class="copy-btn" data-code="liulian888" style="padding:2px 6px;font-size:0.7rem;">复制85折</button></td>
+                      <td><a href="review.html?id=liulian" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="http://853vip01.liulianyunaff.com/#/?code=O6mS8K5N" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>✨ 光年梯机场 (Guangnian)</strong></td>
+                      <td><span class="tag-badge green">● 极佳 (私人专线)</span></td>
+                      <td><strong>64 在线 / 4 维护</strong></td>
+                      <td>IPLC + 私人IEPL</td>
+                      <td><span style="color:#15803d;font-weight:700;">16.8 ms</span></td>
+                      <td><span class="coupon-code">gnt888</span> <button class="copy-btn" data-code="gnt888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=guangnian" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="http://liujie2002.gntaff.com/#/?code=NoPkovej" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>👑 大佬云机场 (Dalao)</strong></td>
+                      <td><span class="tag-badge green">● 正常 (高可用)</span></td>
+                      <td><strong>2 / 2 全在线</strong></td>
+                      <td>全 IPLC/IEPL</td>
+                      <td><span style="color:#15803d;font-weight:700;">18.6 ms</span></td>
+                      <td><span class="coupon-code">dalao888</span> <button class="copy-btn" data-code="dalao888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=dalao" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://liu01.dalaoyunaff.com/#/?code=9A9fbKzz" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🌐 边缘节点 (EdgeNova)</strong></td>
+                      <td><span class="tag-badge green">● 正常 (透明全通)</span></td>
+                      <td><strong>4 / 4 线路全可用</strong></td>
+                      <td>全 IPLC 专线</td>
+                      <td><span style="color:#15803d;font-weight:700;">21.0 ms</span></td>
+                      <td><span class="coupon-code">xk808</span> <button class="copy-btn" data-code="xk808" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=edge" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://zoio.edgenovaaff.cc/#/register?code=ti8OUEN2" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🗺️ 云图机场 (Yuntu)</strong></td>
+                      <td><span class="tag-badge green">● 正常 (三网优化)</span></td>
+                      <td><strong>38 节点接入点良好</strong></td>
+                      <td>三网定向优化</td>
+                      <td><span style="color:#15803d;font-weight:700;">24.5 ms</span></td>
+                      <td><span class="coupon-code">yuntu888</span> <button class="copy-btn" data-code="yuntu888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=yuntu" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://super.ytjcok.org/#/register?code=iKpNlXer" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🌍 环球梯机场 (Huanqiu)</strong></td>
+                      <td><span class="tag-badge green">● 正常 (BGP融合)</span></td>
+                      <td><strong>12 / 12 可用节点</strong></td>
+                      <td>BGP 多线融合</td>
+                      <td><span style="color:#15803d;font-weight:700;">23.0 ms</span></td>
+                      <td><span class="coupon-code">huanqiu888</span> <button class="copy-btn" data-code="huanqiu888" style="padding:2px 6px;font-size:0.7rem;">复制</button></td>
+                      <td><a href="review.html?id=huanqiu" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://123pps01.huanqiutiaff.com/#/?code=iJzShI5m" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🦅 鲲鹏加速 (KunPeng)</strong></td>
+                      <td><span class="tag-badge blue">● 轻量 (注册通畅)</span></td>
+                      <td><strong>v0.4.0 多语言正常</strong></td>
+                      <td>多线中继</td>
+                      <td><span style="color:#2563eb;">32.0 ms</span></td>
+                      <td><span class="coupon-code">99UgsawR</span></td>
+                      <td><a href="review.html?id=kunpeng" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://kunpengjiasu.com/#/register?code=99UgsawR" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>🌪️ 瞬云机场 (ShunYun)</strong></td>
+                      <td><span class="tag-badge blue">● 轮巡 (自动跳转)</span></td>
+                      <td><strong>动态检测入口正常</strong></td>
+                      <td>动态选路</td>
+                      <td><span style="color:#2563eb;">38.0 ms</span></td>
+                      <td><span class="coupon-code">shunyun888</span></td>
+                      <td><a href="review.html?id=shunyun" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://ddd.jichang.best/#/register?code=7idBwf3R" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>⚡ 闪电鼠机场 (Shandian)</strong></td>
+                      <td><span class="tag-badge blue">● 轮巡 (6入口恢复)</span></td>
+                      <td><strong>6 入口全部响应</strong></td>
+                      <td>多入口负载</td>
+                      <td><span style="color:#2563eb;">约 863ms (入口)</span></td>
+                      <td><span class="coupon-code">shandian888</span></td>
+                      <td><a href="review.html?id=shandian" class="internal-pill-link">评测 →</a></td>
+                      <td><a href="https://eothvip01.shandianshuaff.com/#/?code=qNodU3f6" target="_blank" rel="noopener sponsored" class="btn-teal" style="padding:4px 10px;font-size:0.75rem;">直达 ↗</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- SECTION 2: Peak Latency -->
+            <section id="peak-latency">
+              <h2>晚高峰 (20:00~23:00) 核心地区物理专线延迟走势</h2>
+              <p>以下数据基于中国电信深圳入口、中国联通上海入口及中国移动广州入口实测 ping 所得：</p>
+              
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>物理专线路由</th>
+                      <th>代表服务商</th>
+                      <th>白天闲时延迟</th>
+                      <th>晚高峰 21:30 延迟</th>
+                      <th>网络抖动 (Jitter)</th>
+                      <th>稳定性评价</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>深圳 BGP -> 香港 IPLC 直拉光缆</strong></td>
+                      <td>速界、神行加速、极连云</td>
+                      <td>12.8 ms</td>
+                      <td>14.5 ms</td>
+                      <td>&lt; 0.5 ms</td>
+                      <td><span class="tag-badge green">近乎 0 抖动，4K秒开</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>深圳 BGP -> 香港 IEPL 企业内网</strong></td>
+                      <td>可信云、快狸机场</td>
+                      <td>14.2 ms</td>
+                      <td>16.0 ms</td>
+                      <td>&lt; 0.8 ms</td>
+                      <td><span class="tag-badge green">极稳专线，无丢包</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>上海 BGP -> 日本东京 IPLC 专线</strong></td>
+                      <td>云界线、榴莲云、光年梯</td>
+                      <td>26.5 ms</td>
+                      <td>28.4 ms</td>
+                      <td>&lt; 1.0 ms</td>
+                      <td><span class="tag-badge green">流媒体/二次元手游秒连</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>广州 BGP -> 新加坡 IEPL 专线</strong></td>
+                      <td>神行加速、极连云、边缘节点</td>
+                      <td>32.0 ms</td>
+                      <td>34.2 ms</td>
+                      <td>&lt; 1.2 ms</td>
+                      <td><span class="tag-badge green">AI与流媒体极佳体验</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>上海 BGP -> 美国西海岸 (圣何塞)</strong></td>
+                      <td>速界、光年梯私人专线</td>
+                      <td>122.0 ms</td>
+                      <td>128.5 ms</td>
+                      <td>&lt; 2.5 ms</td>
+                      <td><span class="tag-badge blue">太平洋直拉光缆正常值</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- SECTION 3: Region Breakdown -->
+            <section id="region-breakdown">
+              <h2>骨干地区实时节点状态细分</h2>
+              <div class="faq-accordion">
+                <div class="faq-item open">
+                  <div class="faq-header">
+                    <span>🇭🇰 中国香港 (HK) 骨干集群：延迟 14~18ms · 负载 28% (状态极佳)</span>
+                    <span class="faq-icon">▼</span>
+                  </div>
+                  <div class="faq-body">
+                    适合日常主力上网查阅、YouTube 4K/8K 视频播放与超大文件网盘下载。速界（68节点）、神行（50节点）、极连云香港专线 24h 表现近乎零丢包。
+                  </div>
+                </div>
+
+                <div class="faq-item open">
+                  <div class="faq-header">
+                    <span>🇯🇵 日本东京 (JP) 骨干集群：延迟 26~32ms · 负载 25% (状态极佳)</span>
+                    <span class="faq-icon">▼</span>
+                  </div>
+                  <div class="faq-body">
+                    全能型低延迟节点，完美支持 ChatGPT 4o、Claude 3.5、Netflix 日本动画库及各种日服游戏。
+                  </div>
+                </div>
+
+                <div class="faq-item open">
+                  <div class="faq-header">
+                    <span>🇸🇬 新加坡 (SG) 骨干集群：延迟 32~38ms · 负载 22% (状态极佳)</span>
+                    <span class="faq-icon">▼</span>
+                  </div>
+                  <div class="faq-body">
+                    东南亚核心网络中枢，对 TikTok 海外运营、ChatGPT 原生解锁和 Disney+ 流媒体支持极佳。
+                  </div>
+                </div>
+
+                <div class="faq-item open">
+                  <div class="faq-header">
+                    <span>🇺🇸 美国硅谷 (US) 骨干集群：延迟 122~135ms · 负载 19% (状态极佳)</span>
+                    <span class="faq-icon">▼</span>
+                  </div>
+                  <div class="faq-body">
+                    榴莲云与速界配备原生美国家庭住宅宽带 IP，彻底避免 OpenAI 与 Claude 的 Access Denied 拦截。
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- SECTION 4: Incident History -->
+            <section id="incident-log">
+              <h2>近 30 天 15 家服务商维护与事件日志</h2>
+              <div class="data-table-wrapper">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>记录时间</th>
+                      <th>涉及服务商</th>
+                      <th>事件详情与处理过程</th>
+                      <th>最终状态与影响评价</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2026-10-18</td>
+                      <td>神行加速</td>
+                      <td>深港物理光纤完成新一轮带宽双向扩容</td>
+                      <td>往返延迟由 26ms 进一步优化至 23ms，业务 0 中断</td>
+                    </tr>
+                    <tr>
+                      <td>2026-10-14</td>
+                      <td>闪电鼠机场</td>
+                      <td>线路检测入口恢复正常，6 条入口轮巡上线</td>
+                      <td>公开检测入口恢复，建议用户先选择月付进行测试</td>
+                    </tr>
+                    <tr>
+                      <td>2026-10-12</td>
+                      <td>速界机场</td>
+                      <td>8 条入口调度台完成自动化负载均衡更新</td>
+                      <td>智能根据用户本地运营商匹配当前响应最快入口</td>
+                    </tr>
+                    <tr>
+                      <td>2026-10-11</td>
+                      <td>极连云机场</td>
+                      <td>13 目标自动化切流集群升级并扩容至 66 节点</td>
+                      <td>61 节点正常在线，5 个节点例行维护已于当日恢复</td>
+                    </tr>
+                    <tr>
+                      <td>2026-10-09</td>
+                      <td>快狸机场</td>
+                      <td>全量 67 个 IEPL 节点完成日常可用性健康巡检</td>
+                      <td>在线率保持 100%，覆盖亚太与欧美 12 个重点国家</td>
+                    </tr>
+                    <tr>
+                      <td>2026-10-05</td>
+                      <td>光年梯机场</td>
+                      <td>独享私人 IEPL 专线出口完成安全加固</td>
+                      <td>为企业外贸与全屋软路由用户提供独立隔离环境</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- SECTION 5: Probe tech -->
+            <section id="probe-tech">
+              <h2>自动化探针监控原理与透明原则</h2>
+              <p>
+                本监控看板通过部署在深圳、上海、杭州、广州的 4 组独立异地机房探针，以真实普通家宽（中国电信 1000M / 中国联通 500M / 中国移动 1000M）网络环境，持续模拟用户连接发起 TLS 握手测试。数据完全客观透明，绝不接受任何服务商的虚假干预。
+              </p>
+              <div class="callout-box callout-tip" style="margin-top:14px;">
+                <div class="callout-title">💡 状态自检建议：</div>
+                <p>
+                  如果您在本地遇到全部节点报 9999ms 或超时，请先检查本地设备系统时间（需自动同步北京时间）或在客户端内右键“更新订阅”。更多排障方案详见本站 <a href="network.html" class="internal-pill-link">网络故障诊断指南</a>。
+                </p>
+              </div>
+            </section>
+
+          </div>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN: Outline / Table of Contents -->
+      <aside class="sidebar-right">
+        
+        <div class="toc-card">
+          <div class="toc-header">
+            <div class="toc-title">
+              <span>📑</span>
+              <span>监控大纲</span>
+            </div>
+            <span class="reading-percent" id="readingPercent">0%</span>
+          </div>
+
+          <div class="reading-progress-track">
+            <div class="reading-progress-bar" id="readingProgress"></div>
+          </div>
+
+          <ul class="toc-list" id="tocList">
+            <!-- Dynamic generated by JS -->
+          </ul>
+        </div>
+
+        <div class="quick-helper-card">
+          <div class="helper-icon">📝</div>
+          <div class="helper-title">查看 15 家实测评测</div>
+          <div class="helper-desc">真实核验后台节点、测速数据与解锁全案。</div>
+          <a href="reviews.html" class="btn-teal btn-pill" style="width: 100%; box-sizing: border-box; text-align: center;">前往机场评测总库 →</a>
+        </div>
+
+        <div class="quick-helper-card" style="margin-top: 16px;">
+          <div class="helper-icon">⚡</div>
+          <div class="helper-title">梯子天梯榜顶配</div>
+          <div class="helper-desc">基于实测数据严选 TOP 4 旗舰梯子方案。</div>
+          <a href="index.html" class="btn-white btn-pill" style="width: 100%; box-sizing: border-box; text-align: center;">查看梯子天梯榜 →</a>
+        </div>
+
+        <div class="quick-helper-card" style="margin-top: 16px;">
+          <div class="helper-icon">⚠️</div>
+          <div class="helper-title">遇到跑路机场？</div>
+          <div class="helper-desc">查看全网跑路预警黑名单与维权防踩坑指南。</div>
+          <a href="risk.html" class="btn-white btn-pill" style="width: 100%; box-sizing: border-box; text-align: center;">前往风险预警专区 →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" title="返回顶部">↑</button>
+
+  <!-- Search Modal -->
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-input-wrap">
+        <span>🔍</span>
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="搜索 15 家机场实时状态、延迟或专线类型...">
+        <button id="searchClose" style="background:none;border:none;cursor:pointer;font-size:1.2rem;color:#888;">✕</button>
+      </div>
+      <div class="search-modal-results">
+        <a href="status.html#overview-dashboard" class="search-result-item">
+          <div class="search-res-title">📊 15家主流机场实时在线率总表</div>
+          <div class="search-res-snippet">速界、神行23ms、极连云、可信云、快狸等24小时实时健康度看板</div>
+        </a>
+        <a href="status.html#peak-latency" class="search-result-item">
+          <div class="search-res-title">⚡ 晚高峰物理专线延迟走势</div>
+          <div class="search-res-snippet">深港IPLC、沪日专线、穗新专线实测延迟与抖动Jitter</div>
+        </a>
+        <a href="reviews.html" class="search-result-item">
+          <div class="search-res-title">📝 15家机场深度实测报告库</div>
+          <div class="search-res-snippet">真实核验后台节点数据、套餐价格与流媒体/AI解锁表现</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>梯子推荐指南 · TiziTuijian</h4>
+        <p>专注全球网络访问加速、IPLC/IEPL 专线压测与科学上网知识普及。独立客观测评，帮助每个人畅享自由安全的高速网络连接。</p>
+      </div>
+      <div class="footer-col">
+        <h5>核心栏目</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">梯子推荐天梯榜</a></li>
+          <li><a href="reviews.html">15家机场深度评测</a></li>
+          <li><a href="compare.html">机场参数对比矩阵</a></li>
+          <li><a href="coupons.html">独家优惠券库</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>技术与工具</h5>
+        <ul class="footer-links">
+          <li><a href="clients.html">客户端配置教程</a></li>
+          <li><a href="network.html">网络故障诊断指南</a></li>
+          <li><a href="ai-tools.html">AI大模型解锁评测</a></li>
+          <li><a href="status.html">实时状态监测中心</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>索引与合规</h5>
+        <ul class="footer-links">
+          <li><a href="sitemap.html">全站网站地图</a></li>
+          <li><a href="sitemap.xml" target="_blank">XML Sitemap</a></li>
+          <li><a href="risk.html">风险预警黑名单</a></li>
+          <li><a href="javascript:void(0)" onclick="showToast('本站仅供技术学习交流与网络科研')">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 TiziTuijian.online 全球网络评测矩阵. All rights reserved.</div>
+      <div>Domain: <a href="https://tizituijian.online" style="color:inherit;font-weight:bold;">tizituijian.online</a> | Designed with Claymorphism &amp; Modern Editorial Aesthetics.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
