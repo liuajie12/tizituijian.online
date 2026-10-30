@@ -181,5 +181,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://tizituijian.online/review.html?id=ermao</loc>
+    <lastmod>2026-10-30T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
 </urlset>

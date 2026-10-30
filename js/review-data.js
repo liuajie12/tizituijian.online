@@ -459,7 +459,7 @@ const AIRPORTS_DATA = [
     color: 'blue',
     rating: '9.8',
     badge: 'IPLC专线',
-    url: 'https://youxia01.yunjiexianaff.com/#/?code=8ImGvubv',
+    url: 'https://liuajie7.yunjiexianaff.com/#/?code=AMWirEkQ',
     coupon: 'yjx888',
     couponDiscount: '专享88折',
     price: '官网注册后查看实时套餐，年付 ¥96/年起',
@@ -509,7 +509,7 @@ const AIRPORTS_DATA = [
     color: 'coral',
     rating: '9.7',
     badge: 'IPLC/IEPL',
-    url: 'https://liu01.dalaoyunaff.com/#/?code=9A9fbKzz',
+    url: 'https://liujie2.dalaoyunaff.com/#/?code=mmPDuc6r',
     coupon: 'dalao888',
     couponDiscount: '独家特惠',
     price: '官网注册后查看实时套餐，初云 ¥19.99/月起',
@@ -560,7 +560,7 @@ const AIRPORTS_DATA = [
     color: 'green',
     rating: '9.5',
     badge: 'BGP多线',
-    url: 'https://123pps01.huanqiutiaff.com/#/?code=iJzShI5m',
+    url: 'https://liuajie740.huanqiutiaff.com/#/?code=1PrqjboO',
     coupon: 'huanqiu888',
     couponDiscount: '学生特惠',
     price: '官网注册后查看实时套餐，学生套餐 ¥96/年起',
@@ -610,7 +610,7 @@ const AIRPORTS_DATA = [
     color: 'violet',
     rating: '9.3',
     badge: '多入口轮巡',
-    url: 'https://eothvip01.shandianshuaff.com/#/?code=qNodU3f6',
+    url: 'https://liujie2.shandianshuaff.com/#/?code=vwBNE30O',
     coupon: 'shandian888',
     couponDiscount: '专属尝鲜',
     price: '官网实时页面为准，先试后买',
@@ -657,7 +657,7 @@ const AIRPORTS_DATA = [
     color: 'coral',
     rating: '9.8',
     badge: 'IPLC专线',
-    url: 'http://853vip01.liulianyunaff.com/#/?code=O6mS8K5N',
+    url: 'https://liuajie74.liulianyunaff.com/#/?code=rp2bbeus',
     coupon: 'liulian888',
     couponDiscount: '专属85折',
     price: '官网注册后查看实时套餐，金枕年付 ¥96/年起',
@@ -708,7 +708,7 @@ const AIRPORTS_DATA = [
     color: 'blue',
     rating: '9.8',
     badge: 'IPLC专线',
-    url: 'https://fugui0077.shenxingaff.com/#/?code=z3ybkLVj',
+    url: 'https://wuhan01.shenxingaff.com/#/?code=z3ybkLVj',
     coupon: 'shenxing888',
     couponDiscount: '独家特惠',
     price: '官网注册后查看实时套餐，尝鲜包 ¥23/月起',
@@ -748,6 +748,54 @@ const AIRPORTS_DATA = [
       ['支持哪些客户端？', '后台提供 iOS、Android、Windows、macOS 四个平台配置，支持主流科学上网软件。'],
       ['后台延迟 23ms 是什么意思？', '代表国内专线入口至香港物理光纤的极速往返延迟，达到电竞级水准。'],
       ['是否限制连接设备数？', '套餐明确标注不限制客户端数量，适合家庭与办公室共享。']
+    ]
+  },
+  {
+    id: 'ermao',
+    name: '二猫云机场',
+    english: 'Ermao Cloud',
+    logo: '猫',
+    color: 'coral',
+    rating: '9.6',
+    badge: 'IEPL专线',
+    url: 'https://guangs.2maoyunaff.cc/#/?code=wMKtwSYr',
+    coupon: 'ermao5555',
+    couponDiscount: '专属立减',
+    price: '主力月付 ¥20.00/月起 · 130GB',
+    priceLines: [
+      '主力月付：¥20.00/月 · 130GB（同价位多送10G流量）',
+      '中度进阶：约 ¥40.00/月 · 200GB',
+      '高级尊享：约 ¥80~160/月 · 400~800GB',
+      '折算单价：每 GB 折算约 ¥0.15，高性价比'
+    ],
+    tags: ['全 IEPL 专线', 'VLESS协议', '130G大流量', '晚高峰<2.3%丢包', '原生IP解锁'],
+    evidence: '全站综合排行 No.7，运营始于 2023 年；30天分布式探针实测时延波动标准差 < 3.5ms，晚高峰丢包率 < 2.3%，下行均值 265Mbps。',
+    metrics: ['综合排行 No.7', '全 IEPL 专线', 'VLESS 协议', '下行均值 265Mbps'],
+    nodeInfo: '节点覆盖香港、日本、新加坡、美国等亚太与欧美核心枢纽机房，国内 BGP 多线入口通过内网专线通道直连境外落地。',
+    clientInfo: '全面支持通用第三方开源客户端（Clash、Sing-box、v2rayN、Shadowrocket 等）一键订阅导入。',
+    ipInfo: '原生纯净落地 IP，针对 Netflix、Disney+、TikTok 及 OpenAI ChatGPT、Claude 对话深度调优，极少触发验证阻断。',
+    speedReport: '30 天分布式探针实测，晚高峰（20:00~23:00）丢包率保持在 2.3% 以下，下行平均速率约 265Mbps，4K 拖拽缓冲通常小于 1.5 秒。',
+    unlockInfo: '原生 IP 保证高纯净度，主要亚太与美西节点支持 OpenAI 与 Claude 对话无风控，Netflix 全区及主流海外流媒体顺畅秒开。',
+    topology: ['本地客户端', '国内BGP多线入口机房', 'IEPL内网专线通道', '境外POP落地机房', '目标网站/AI应用'],
+    lead: '二猫云作为 2023 年上线的特色服务商，主打 IEPL 商业专线与 VLESS 协议。20 元档提供 130GB 流量（比常规标配多 10GB），节点平稳，群组活跃，综合性价比高。',
+    fit: '适合追求大流量性价比、重视晚高峰流媒体 4K 播放与 ChatGPT/Claude 跨境生产力交互的平衡型用户。',
+    caution: '新锐服务商，首次选购建议遵守风控自保原则坚持月付试用；域名变更时需要及时重新拉取订阅。',
+    steps: [
+      '点击专属链接直达二猫云官方注册入口并完成账号创建',
+      '在商店选择主力月付（20元/130GB），结算时输入专属优惠码 ermao5555 享受立减',
+      '复制订阅链接导入至 Clash、Sing-box 或 Shadowrocket 客户端开启极速代理'
+    ],
+    troubleshoot: [
+      '节点连接超时：进入二猫云后台重新复制最新订阅地址，并在客户端内强制刷新订阅',
+      '晚高峰速度波动：切换至香港、日本或新加坡同地区的备用 IEPL 专线落地节点',
+      'AI 提示地区限制：切换至美国原生纯净节点，并开启无痕浏览模式'
+    ],
+    faqs: [
+      ['二猫云是否支持在晚高峰流畅观看 4K 视频？', '经过 30 天探针在 20:00-23:00 晚高峰实测，二猫云所采用的 IEPL 专线能够保持低于 2.3% 的极低丢包率，4K 拖拽缓冲时间通常小于 1.5 秒，表现优异。'],
+      ['二猫云是否有专属优惠码？如何在结算时使用？', '本站读者可享受专属优惠：在官方结账页面结算时输入优惠码 ermao5555 即可自动享受立减折扣。'],
+      ['二猫云适合用于 ChatGPT 或 Claude 跨境开发吗？', '实测其落地节点具备良好的 IP 纯净度，主要亚太与美西节点支持 OpenAI 与 Claude 对话，极少触发 Cloudflare 阻断或验证码拦截。'],
+      ['首次选购二猫云，建议选择哪种计费周期？', '一贯建议新手“坚持月付试用”。在本地运营商网络环境确认晚高峰速度与稳定性完全符合预期后，再考虑长期订阅以享受更高性价比。'],
+      ['二猫云支持哪些协议与客户端？', '传输协议主要采用高效的 VLESS 协议，客户端生态全面支持通用第三方开源客户端（如 Clash、Sing-box、v2rayN、Shadowrocket 等）。']
     ]
   }
 ];
